@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Natural Disaster Risk Level Prediction</string>
+    <string name="title_weather_map">Weather Map</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_app_introduction">About</string>
+    <string name="location_settings">Location Disabled: Reset in App Settings</string>
+    <!-- Weather Map View -->
+    <string name="map_layer_button">Map Layer Button</string>
+    <string name="map_location_button">Location Button</string>
+    <!-- Open Weather Map Layers -->
+</resources>

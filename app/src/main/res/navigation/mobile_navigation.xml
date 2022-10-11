@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/mobile_navigation"
+            app:startDestination="@+id/navigation_introduction">
+
+    <fragment
+            android:id="@+id/navigation_weather_map"
+            android:name="com.example.natural_disaster_risk_level_prediction_android_app.ui.weathermap.WeatherMapFragment"
+            android:label="@string/title_weather_map"
+            tools:layout="@layout/fragment_weather_map"/>
+
+    <fragment
+            android:id="@+id/navigation_notifications"
+            android:name="com.example.natural_disaster_risk_level_prediction_android_app.ui.notifications.NotificationsFragment"
+            android:label="@string/title_notifications"
+            tools:layout="@layout/fragment_notifications"/>
+
+    <fragment
+            android:id="@+id/navigation_introduction"
+            android:name="com.example.natural_disaster_risk_level_prediction_android_app.ui.home.AppIntroductionFragment"
+            android:label="@string/title_app_introduction"
+            tools:layout="@layout/fragment_app_introduction"/>
+</navigation>
