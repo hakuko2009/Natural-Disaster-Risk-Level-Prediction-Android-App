@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Natural Disaster Risk Level Prediction</string>
+    <string name="app_name">Natural Disaster Risk Level</string>
     <string name="title_weather_map">Weather Map</string>
     <string name="title_notifications">Notifications</string>
     <string name="title_app_introduction">About</string>
@@ -8,4 +8,9 @@
     <string name="map_layer_button">Map Layer Button</string>
     <string name="map_location_button">Location Button</string>
     <!-- Open Weather Map Layers -->
+    <string name="forecast_weather">Forecast weather</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="location_required">Location permission required</string>
+    <string name="access_to_gps">For search by GPS, please allow access to Location</string>
 </resources>
