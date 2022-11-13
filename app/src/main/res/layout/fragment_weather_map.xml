@@ -1,65 +1,106 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:id="@+id/coordinatorLayout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        xmlns:tools="http://schemas.android.com/tools">
 
-    <com.google.android.material.appbar.AppBarLayout
-            android:id="@+id/appBarLayout"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+    <data>
 
-        <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbar"
+        <variable
+                name="status"
+                type="com.example.natural_disaster_risk_level_prediction_android_app.configuration.Status"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            tools:context=".ui.weathermap.WeatherMapFragment">
+
+        <WebView
+                android:id="@+id/web_view"
+                mapVisibility="@{status}"
                 android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                android:background="?android:attr/colorPrimary"/>
+                android:layout_height="match_parent"
+                android:layout_marginTop="-65dp"
+                android:focusable="true"/>
 
-    </com.google.android.material.appbar.AppBarLayout>
+        <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/map_loading_animation"
+                loadingVisibility="@{status}"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"/>
+        <!--                app:lottie_fileName="location.json"-->
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/layerFab"
-            style="@style/Widget.MaterialComponents.FloatingActionButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:layout_marginEnd="15dp"
-            app:fabSize="mini"
-            app:layout_anchor="@id/toolbar"
-            app:layout_anchorGravity="top|end"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/mapView"
-            tools:ignore="NotSibling"
-            android:contentDescription="TODO"/>
 
-    <!-- MapView -->
-    <com.google.android.gms.maps.MapView
-            android:id="@+id/mapView"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/appBarLayout">
-    </com.google.android.gms.maps.MapView>
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginBottom="40dp"
+                app:layout_constraintBottom_toBottomOf="@+id/web_view"
+                app:layout_constraintStart_toStartOf="parent">
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/locationFab"
-            style="@style/Widget.MaterialComponents.FloatingActionButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="641dp"
-            android:layout_marginEnd="4dp"
-            app:layout_constraintEnd_toEndOf="@+id/mapView"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@android:drawable/ic_menu_mylocation"
-            app:useCompatPadding="true"
-            android:contentDescription="TODO"/>
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/windButton"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.2"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/map_items_margin"
+                    android:focusable="true"
+                    app:backgroundTint="#ffffff"
+                    app:srcCompat="@drawable/wind_btn"
+                    app:borderWidth="0dp"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/rainButton"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.2"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/map_items_margin"
+                    android:focusable="true"
+                    app:backgroundTint="#A9E2F3"
+                    app:srcCompat="@drawable/rain_btn"
+                    app:borderWidth="0dp"/>
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/tempButton"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.2"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/map_items_margin"
+                    android:focusable="true"
+                    app:backgroundTint="#FE642E"
+                    app:borderWidth="0dp"
+                    app:srcCompat="@drawable/temp_btn"/>
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/cloudsButton"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.2"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/map_items_margin"
+                    android:focusable="true"
+                    app:backgroundTint="#CEECF5"
+                    app:srcCompat="@drawable/clouds_btn"
+                    app:borderWidth="0dp"/>
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/pressureButton"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.2"
+                    android:layout_height="wrap_content"
+                    android:focusable="true"
+                    app:backgroundTint="#F7D358"
+                    app:srcCompat="@drawable/pressure_btn"
+                    app:borderWidth="0dp"/>
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,4 +1,4 @@
-package com.example.natural_disaster_risk_level_prediction_android_app.ui.home
+package com.example.natural_disaster_risk_level_prediction_android_app.ui.introduction
 
 import android.os.Bundle
 import android.view.LayoutInflater
