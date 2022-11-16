@@ -1,7 +1,9 @@
 package com.example.natural_disaster_risk_level_prediction_android_app.api
 
+import retrofit2.Call
 import retrofit2.http.Field
 import retrofit2.http.GET
+import retrofit2.http.Query
 
 interface RiskLevelApi {
     companion object {
@@ -11,12 +13,12 @@ interface RiskLevelApi {
 
     @GET(PREDICT)
     fun getRiskLevel(
-        @Field("year") year: Int,
-        @Field("type") type: String,
-        @Field("region") region: String,
-        @Field("magValue") magValue: Double,
-        @Field("magScale") magScale: String,
-        @Field("startMonth") startMonth: Int,
-        @Field("endMonth") endMonth: Int
-    ): Int
+        @Query("year") year: Int,
+        @Query("type") type: String,
+        @Query("region") region: String,
+        @Query("magValue") magValue: Double,
+        @Query("magScale") magScale: String,
+        @Query("startMonth") startMonth: Int,
+        @Query("endMonth") endMonth: Int
+    ): Call<Int>
 }

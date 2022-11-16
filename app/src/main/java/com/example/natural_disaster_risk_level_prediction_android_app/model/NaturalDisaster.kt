@@ -1,17 +1,18 @@
 package com.example.natural_disaster_risk_level_prediction_android_app.model
 
 data class NaturalDisaster(
-    var year: Int? = null,
-    var type: Type? = null,
-    var region: Region? = null,
-    var magValue: Double? = null,
-    var magScale: MagScale? = null,
-    var startMonth: Int? = null,
-    var endMonth: Int? = null,
+    var year: Int = 2000,
+    var type: Type = Type.NONE,
+    var region: Region = Region.NONE,
+    var magValue: Double = 0.0,
+    var magScale: MagScale = MagScale.NONE,
+    var startMonth: Int = 1,
+    var endMonth: Int = 1,
     var calculatedLevel: Int = 0
 )
 
 enum class Type(val value: String) {
+    NONE(""),
     FLOOD("Flood"),
     DROUGHT("Drought"),
     STORM("Storm"),
@@ -26,6 +27,7 @@ enum class Type(val value: String) {
 }
 
 enum class Region(val value: String) {
+    NONE(""),
     EASTERN_ASIA("Eastern Asia"),
     SOUTHERN_ASIA("Southern Asia"),
     SOUTH_AMERICA("South America"),
@@ -51,6 +53,7 @@ enum class Region(val value: String) {
 }
 
 enum class MagScale(val value: String) {
+    NONE(""),
     Km2("Km2"),
     Kph("Kph"),
     CELSIUS_DEGREE("°C"),
