@@ -6,6 +6,9 @@ import com.example.natural_disaster_risk_level_prediction_android_app.configurat
 import com.example.natural_disaster_risk_level_prediction_android_app.configuration.Settings
 import com.example.natural_disaster_risk_level_prediction_android_app.database.CurrentWeatherDatabase
 import com.example.natural_disaster_risk_level_prediction_android_app.database.ForecastWeatherDatabase
+import dagger.Module
+import dagger.hilt.InstallIn
+import dagger.hilt.android.components.ViewModelComponent
 import javax.inject.Inject
 import javax.inject.Singleton
 import kotlinx.coroutines.Dispatchers

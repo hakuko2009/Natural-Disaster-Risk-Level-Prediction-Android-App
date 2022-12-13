@@ -9,15 +9,15 @@ import javax.inject.Singleton
 class RiskLevelRepository @Inject constructor(
     private val riskLevelApi: RiskLevelApi
 ) {
-    fun getRiskLevel(data: NaturalDisaster) {
-        riskLevelApi.getRiskLevel(
-            year = data.year,
-            type = data.type.value,
-            region = data.region.value,
-            magValue = data.magValue,
-            magScale = data.magScale.value,
-            startMonth = data.startMonth,
-            endMonth = data.endMonth
-        )
-    }
+    fun getRiskLevel(data: NaturalDisaster) = riskLevelApi.getRiskLevel(
+        temp = data.temp,
+        pressure = data.pressure,
+        humidity = data.humidity,
+        clouds = data.clouds,
+        windSpeed = data.windSpeed,
+        windDeg = data.windDeg,
+        weatherMain = data.weatherMain,
+        weatherDes = data.weatherDesc,
+        rain1h = data.rain
+    )
 }

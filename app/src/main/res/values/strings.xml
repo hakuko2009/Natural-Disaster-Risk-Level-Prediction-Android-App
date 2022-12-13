@@ -11,6 +11,8 @@
     <string name="forecast_weather">Forecast weather</string>
     <string name="ok">OK</string>
     <string name="cancel">Cancel</string>
+    <string name="network_error">Network error</string>
+    <string name="done_get_data">"Get current weather done!"</string>
     <string name="location_required">Location permission required</string>
     <string name="access_to_gps">For search by GPS, please allow access to Location</string>
 </resources>

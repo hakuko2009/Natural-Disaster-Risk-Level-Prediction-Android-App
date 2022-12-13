@@ -8,6 +8,7 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.natural_disaster_risk_level_prediction_android_app.databinding.FragmentAppIntroductionBinding
+import dagger.hilt.android.AndroidEntryPoint
 
 class AppIntroductionFragment : Fragment() {
 

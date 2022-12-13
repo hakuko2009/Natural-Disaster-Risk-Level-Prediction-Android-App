@@ -1,14 +1,15 @@
 package com.example.natural_disaster_risk_level_prediction_android_app.model
 
 data class NaturalDisaster(
-    var year: Int = 2000,
-    var type: Type = Type.NONE,
-    var region: Region = Region.NONE,
-    var magValue: Double = 0.0,
-    var magScale: MagScale = MagScale.NONE,
-    var startMonth: Int = 1,
-    var endMonth: Int = 1,
-    var calculatedLevel: Int = 0
+    var temp: Double,
+    var pressure: Double,
+    var humidity: Double,
+    var clouds: Double,
+    var windSpeed: Double,
+    var windDeg: Double,
+    var weatherMain: String,
+    var weatherDesc: String,
+    var rain: Double = 0.0
 )
 
 enum class Type(val value: String) {

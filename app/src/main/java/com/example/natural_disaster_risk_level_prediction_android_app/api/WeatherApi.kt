@@ -8,7 +8,6 @@ import retrofit2.http.GET
 import retrofit2.http.Query
 
 interface WeatherApi {
-
     companion object {
         const val BASE_URL = "https://api.openweathermap.org/"
         const val CURRENT = "data/2.5/weather"
