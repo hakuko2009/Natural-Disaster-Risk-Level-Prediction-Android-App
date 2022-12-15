@@ -11,7 +11,4 @@ class WeatherViewModel @Inject constructor(
 ) : ViewModel() {
 
     fun getCurrentWeather() = weatherRepo.getCurrentWeather()
-
-    fun getForecastWeather() = weatherRepo.getForecastWeather()
-
 }

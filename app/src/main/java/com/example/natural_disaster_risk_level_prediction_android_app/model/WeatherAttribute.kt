@@ -1,6 +1,6 @@
 package com.example.natural_disaster_risk_level_prediction_android_app.model
 
-data class NaturalDisaster(
+data class WeatherAttribute(
     var temp: Double,
     var pressure: Double,
     var humidity: Double,
@@ -51,12 +51,4 @@ enum class Region(val value: String) {
     CENTRAL_ASIA("Central Asia"),
     POLYNESIA("Polynesia"),
     MICRONESIA("Micronesia")
-}
-
-enum class MagScale(val value: String) {
-    NONE(""),
-    Km2("Km2"),
-    Kph("Kph"),
-    CELSIUS_DEGREE("°C"),
-    RICHTER("Richter")
 }

@@ -15,7 +15,7 @@ interface WeatherApi {
         const val SEARCH_NAME = "geo/1.0/direct"
         const val SEARCH_GPS = "geo/1.0/reverse"
         // personal use
-        var API_KEY = "YOUR API KEY"
+        var API_KEY = "PERSONAL_KEY"
     }
 
     @GET(CURRENT)

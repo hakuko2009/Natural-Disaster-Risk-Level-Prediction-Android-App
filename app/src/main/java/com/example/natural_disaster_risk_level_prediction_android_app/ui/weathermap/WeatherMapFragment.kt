@@ -57,7 +57,7 @@ class WeatherMapFragment : Fragment(R.layout.fragment_weather_map) {
     private var lon: Double = 108.22903
     private var url =
         "https://openweathermap.org/weathermap?basemap=map&cities=false&layer=temperature&lat=" +
-                lat + "&lon=" + lon + "&zoom=6"
+                lat + "&lon=" + lon + "&zoom=8"
 
     companion object {
         private const val LOCATION_REQUEST_CODE = 2
@@ -257,7 +257,7 @@ class WeatherMapFragment : Fragment(R.layout.fragment_weather_map) {
                         lon = location.longitude
                         Log.d("startGPS - lon", lon.toString())
                         url = "https://openweathermap.org/weathermap?basemap=map&cities=false&layer=temperature&lat=" +
-                                lat + "&lon=" + lon + "&zoom=6"
+                                lat + "&lon=" + lon + "&zoom=8"
                     }
                     return
                 }

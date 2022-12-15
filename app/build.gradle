@@ -24,6 +24,7 @@ android {
                 arguments += ["room.schemaLocation": "$projectDir/schemas".toString()]
             }
         }
+
     }
 
     buildTypes {
@@ -62,6 +63,9 @@ android {
     }
     buildFeatures {
         dataBinding true
+    }
+    sourceSets {
+        androidTest.assets.srcDirs += files("$projectDir/schemas".toString())
     }
 }
 
