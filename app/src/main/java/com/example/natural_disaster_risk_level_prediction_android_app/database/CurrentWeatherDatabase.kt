@@ -11,8 +11,8 @@ import com.example.natural_disaster_risk_level_prediction_android_app.model.Curr
     version = 1,
     exportSchema = false
 )
+
 @TypeConverters(ConvertList::class)
 abstract class CurrentWeatherDatabase : RoomDatabase() {
-
     abstract fun currentDao(): CurrentWeatherDao
 }

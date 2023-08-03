@@ -4,6 +4,7 @@
     <string name="title_notifications">Notifications</string>
     <string name="title_app_introduction">About</string>
     <string name="location_settings">Location Disabled: Reset in App Settings</string>
+    <string name="introduction">This is an Android App on predicting natural disaster risk level, giving preventive measures and showing weather attribute\'s map</string>
     <!-- Weather Map View -->
     <string name="map_layer_button">Map Layer Button</string>
     <string name="map_location_button">Location Button</string>
@@ -11,6 +12,14 @@
     <string name="forecast_weather">Forecast weather</string>
     <string name="ok">OK</string>
     <string name="cancel">Cancel</string>
+    <string name="level_0_alert">You are in safe! There is no disaster detected nearby</string>
+    <string name="level_1_alert">Be careful! Danger is coming in about 48 hours</string>
+    <string name="level_2_alert">Stay safe. It must be dangerous outside</string>
+    <string name="level_3_alert">Your area is in great danger!</string>
+    <string name="current_weather">Current weather:\n\tTemperature is %d°C \n\tWind speed is %d m/s \n\t%s</string>
+    <string name="network_error">Network error</string>
+    <string name="dialog_button_text">Got it!</string>
+    <string name="done_get_data">"Get current weather done!"</string>
     <string name="location_required">Location permission required</string>
     <string name="access_to_gps">For search by GPS, please allow access to Location</string>
 </resources>

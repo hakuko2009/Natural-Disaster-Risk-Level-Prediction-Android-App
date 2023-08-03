@@ -32,7 +32,7 @@ data class CurrentWeather(
 ) {
 
     data class Clouds(
-        val all: Int
+        val all: Double
     )
 
     data class Coord(
@@ -42,8 +42,8 @@ data class CurrentWeather(
 
     data class Main(
         val feels_like: Double,
-        val humidity: Int,
-        val pressure: Int,
+        val humidity: Double,
+        val pressure: Double,
         val temp: Double,
         val temp_max: Double,
         val temp_min: Double
@@ -65,7 +65,7 @@ data class CurrentWeather(
     )
 
     data class Wind(
-        val deg: Int,
+        val deg: Double,
         val speed: Double
     )
 }

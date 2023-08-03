@@ -7,7 +7,7 @@ import androidx.lifecycle.ViewModel
 class AppIntroductionViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
-        value = "This is home Fragment"
+        value = "This is an Android App on predicting natural disaster risk level, giving preventive measures and showing weather attribute\'s map"
     }
     val text: LiveData<String> = _text
 }

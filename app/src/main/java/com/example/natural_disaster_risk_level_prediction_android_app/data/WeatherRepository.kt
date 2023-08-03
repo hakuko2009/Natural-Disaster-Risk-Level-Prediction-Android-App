@@ -18,20 +18,13 @@ class WeatherRepository @Inject constructor(
 ) {
 
     fun getCurrentWeather() = liveData(Dispatchers.IO) {
-        val db = currentDatabase.currentDao().get()
+        currentDatabase.currentDao().get()
 
-        if (db == null)
-            emit(
-                Resource.loadingDbNull(
-                    data = currentDatabase.currentDao().get()
-                )
+        emit(
+            Resource.loadingDbFull(
+                data = currentDatabase.currentDao().get()
             )
-        else
-            emit(
-                Resource.loadingDbFull(
-                    data = currentDatabase.currentDao().get()
-                )
-            )
+        )
 
         if (Settings.SHOULD_UPDATE) {
             try {
@@ -52,20 +45,13 @@ class WeatherRepository @Inject constructor(
     }
 
     fun getForecastWeather() = liveData(Dispatchers.IO) {
-        val db = forecastDatabase.forecastDao().get()
+        forecastDatabase.forecastDao().get()
 
-        if (db == null)
-            emit(
-                Resource.loadingDbNull(
-                    data = forecastDatabase.forecastDao().get()
-                )
+        emit(
+            Resource.loadingDbFull(
+                forecastDatabase.forecastDao().get()
             )
-        else
-            emit(
-                Resource.loadingDbFull(
-                    forecastDatabase.forecastDao().get()
-                )
-            )
+        )
 
         if (Settings.SHOULD_UPDATE) {
             try {
@@ -79,37 +65,6 @@ class WeatherRepository @Inject constructor(
             } catch (exception: Exception) {
                 emit(Resource.error(data = null))
             }
-        }
-    }
-
-    fun searchByName(city: String) = liveData(Dispatchers.IO) {
-        emit(
-            Resource.loading(
-                data = null
-            )
-        )
-        try {
-            emit(Resource.success(api.searchByName(city = city)))
-        } catch (exception: Exception) {
-            emit(Resource.error(data = null))
-        }
-
-    }
-
-    fun searchByGPS(latitude: Double, longitudes: Double) = liveData(Dispatchers.IO) {
-        emit(
-            Resource.loading(
-                data = null
-            )
-        )
-        try {
-            emit(
-                Resource.success(
-                    api.searchByGPS(lat = latitude, lon = longitudes)
-                )
-            )
-        } catch (exception: Exception) {
-            emit(Resource.error(data = null))
         }
     }
 }

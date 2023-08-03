@@ -1,6 +1,5 @@
 package com.example.natural_disaster_risk_level_prediction_android_app.ui.weathermap
 
-import SearchViewModel
 import android.Manifest
 import android.annotation.SuppressLint
 import android.content.Context
@@ -13,9 +12,7 @@ import android.os.Bundle
 import android.os.Looper
 import android.provider.Settings
 import android.util.Log
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import android.webkit.CookieManager
 import android.webkit.WebResourceError
 import android.webkit.WebResourceRequest
@@ -23,7 +20,6 @@ import android.webkit.WebView
 import android.webkit.WebViewClient
 import androidx.core.app.ActivityCompat
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
 import com.example.natural_disaster_risk_level_prediction_android_app.R
 import com.example.natural_disaster_risk_level_prediction_android_app.configuration.Status
 import com.example.natural_disaster_risk_level_prediction_android_app.databinding.FragmentWeatherMapBinding
@@ -37,6 +33,7 @@ import com.google.android.gms.location.LocationSettingsRequest
 import com.google.android.gms.location.LocationSettingsResponse
 import com.google.android.gms.tasks.Task
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_weather_map.cloudsButton
 import kotlinx.android.synthetic.main.fragment_weather_map.pressureButton
 import kotlinx.android.synthetic.main.fragment_weather_map.rainButton
@@ -51,7 +48,6 @@ class WeatherMapFragment : Fragment(R.layout.fragment_weather_map) {
         Manifest.permission.ACCESS_FINE_LOCATION
     )
 
-    private val viewModel by viewModels<SearchViewModel>()
     private lateinit var fusedLocationClient: FusedLocationProviderClient
     private lateinit var request: LocationRequest
     private lateinit var builder: LocationSettingsRequest.Builder
@@ -61,7 +57,7 @@ class WeatherMapFragment : Fragment(R.layout.fragment_weather_map) {
     private var lon: Double = 108.22903
     private var url =
         "https://openweathermap.org/weathermap?basemap=map&cities=false&layer=temperature&lat=" +
-                lat + "&lon=" + lon + "&zoom=6"
+                lat + "&lon=" + lon + "&zoom=8"
 
     companion object {
         private const val LOCATION_REQUEST_CODE = 2
@@ -261,7 +257,7 @@ class WeatherMapFragment : Fragment(R.layout.fragment_weather_map) {
                         lon = location.longitude
                         Log.d("startGPS - lon", lon.toString())
                         url = "https://openweathermap.org/weathermap?basemap=map&cities=false&layer=temperature&lat=" +
-                                lat + "&lon=" + lon + "&zoom=6"
+                                lat + "&lon=" + lon + "&zoom=8"
                     }
                     return
                 }
